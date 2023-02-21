@@ -93,11 +93,20 @@ public class DictionnaireChaine<C, V> implements Dictionnaire<C, V> {
      *
      * @param cle la clé associée à la valeur à récupérer
      * @return la valeur associée à la clé
-     * @throws NoSuchElementException si la clé n'existe pas dans le dictionnaire
      */
-    public V valeur(C cle) throws NoSuchElementException {
+    public V valeur(C cle){
 
+        V val = null;
 
-        throw new NoSuchElementException("La clé " + cle + " n'existe pas dans le dictionnaire.");
+        if (entrees.estVide()) {
+            val = null;
+        } else {
+            for(int i = 0; i<entrees.taille();i++) {
+                Entree<C, V> element = entrees.element(i);
+                if(element.cle.equals(cle))
+                    val = element.valeur;
+            }
+        }
+        return val;
     }
 }
