@@ -2,10 +2,8 @@ package fr.rodez3il.a2022.mrmatt.solveur;
 
 import fr.rodez3il.a2022.mrmatt.solveur.structures.ListeTableau;
 import fr.rodez3il.a2022.mrmatt.sources.Niveau;
-import fr.rodez3il.a2022.mrmatt.sources.objets.*;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Solveur {
 
@@ -18,7 +16,7 @@ public class Solveur {
 	public static String trouverSolution(Niveau niveau) {
 		ListeTableau<Noeud> traites = new ListeTableau<>();
 		ListeTableau<Noeud> aTraiter = new ListeTableau<>();
-		aTraiter.ajouter(new Noeud(niveau, null, null));
+		aTraiter.ajouter(new Noeud( niveau, null, null));
 
 		while (!aTraiter.estVide()) {
 			Noeud n = aTraiter.enlever(0);
